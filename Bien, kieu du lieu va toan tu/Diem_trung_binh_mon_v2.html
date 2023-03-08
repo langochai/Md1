@@ -10,14 +10,14 @@ Diem hoa hoc <input type="text" id="hoahoc"> <br>
 Diem sinh hoc <input type="text" id="sinhhoc"> <br>
 <p id="diemtrungbinh"></p>
 <script>
-inputVatly = document.getElementById("vatly")
-inputHoahoc = document.getElementById("hoahoc")
-inputSinhhoc = document.getElementById("sinhhoc")
+    inputVatly = document.getElementById("vatly").value
+    inputHoahoc = document.getElementById("hoahoc").value
+    inputSinhhoc = document.getElementById("sinhhoc").value
     let VatLy = parseInt(inputVatly)
     let HoaHoc = parseInt(inputHoahoc)
     let SinhHoc = parseInt(inputSinhhoc)
-    let Dtb = (VatLy+HoaHoc+SinhHoc)/3
-    document.getElementById(diemtrungbinh).innerHTML = Dtb
+    let Dtb = (VatLy + HoaHoc + SinhHoc) / 3
+    document.getElementById("diemtrungbinh").innerHTML = "diem tb la " + Dtb
 </script>
 </body>
 </html>
