@@ -12,7 +12,10 @@
     let vl = parseInt(inputDiemVatly)
     let hh = parseInt(inputDiemHoahoc)
     let sh = parseInt(inputDiemSinhhoc)
-    let dtb = (vl+hh+sh)/3
+    let dtong = vl+hh+sh
+    let dtb = dtong/3
+    document.write('diem tong la ' + dtong)
+    document.write("</br>")
     document.write('diem trung binh la ' + dtb)
 </script>
 </body>
