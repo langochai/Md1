@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Chuyen doi tien te</title>
+</head>
+<body>
+<table>
+  <tr>
+    <td style="text-align: center">Amount</td>
+    <td style="text-align: center">From currency</td>
+    <td style="text-align: center">To currency</td>
+  </tr>
+  <tr>
+    <td><input type="text" id="currency"></td>
+    <td>
+      <select id="fromCurrency">
+        <option value="VND">VND</option>
+        <option value="USD">USD</option>
+        <option value="YEN">YEN</option>
+      </select>
+    </td>
+    <td>
+      <select id="toCurrency">
+        <option value="VND">VND</option>
+        <option value="USD">USD</option>
+        <option value="YEN">YEN</option>
+      </select>
+    </td>
+    <td>
+      <button onclick="calculate()">Tinh toan</button>
+    </td>
+  </tr>
+</table>
+<br>
+<p id="result"></p>
+<script>
+  function calculate() {
+
+    let amount = +document.getElementById("currency").value;
+    let fromCurrency = document.getElementById("fromCurrency").value;
+    let toCurrency = document.getElementById("toCurrency").value;
+    let a
+    let b
+    let result
+    switch (fromCurrency){
+      case  "VND":
+        a = 1
+            break
+      case "USD":
+        a = 23000
+            break
+      case "YEN":
+        a = 170
+    }
+    switch (toCurrency){
+      case "VND":
+        b = 1
+            break
+      case "USD":
+        b = 23000
+            break
+      case "YEN":
+        b = 170
+            break
+    }
+    result = (amount * a)/b
+    document.getElementById("result").innerHTML = result
+  }
+</script>
+</body>
+</html>

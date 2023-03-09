@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tinh BMI</title>
+</head>
+<body>
+<input type="text" id="weight"> la can nang
+<br>
+<input type="text" id="height"> la chieu cao
+<br>
+<button onclick="calculate()">tinh toan</button>
+<br>
+<p id="result"></p>
+<script>
+    function calculate() {
+        let weight = parseInt(document.getElementById("weight").value)
+        let height = parseFloat(document.getElementById("height").value)
+        let bmi = weight / (height * height)
+        if (bmi < 18)
+            document.getElementById("result").innerHTML = "Underweight " + bmi
+        else if (bmi < 25.0)
+            document.getElementById("result").innerHTML = "Normal " + bmi
+        else if (bmi < 30.0)
+            document.getElementById("result").innerHTML = "Overweight " + bmi
+        else
+            document.getElementById("result").innerHTML = "Mordbidly Obese " + bmi
+    }
+</script>
+</body>
+</html>
