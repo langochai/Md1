@@ -5,11 +5,15 @@
     <title>Chuyen doi nhiet do</title>
 </head>
 <body>
+Nhiet do (do C): <input type="text" id="CDegree"> <br>
+<button onclick="tinhtoan()">Tinh toan</button>
+<p id="kq"></p>
 <script>
-inputCdegree = prompt("nhiet do (do C)?")
-let Cdegree = parseInt(inputCdegree)
-let Fdegree = (9*Cdegree/5)+32
-document.write("nhiet do (do F) la "+Fdegree)
+    function tinhtoan(){
+        let CDegree = parseInt(document.getElementById("CDegree").value)
+        let FDegree = (CDegree*9/5)+32
+        document.getElementById("kq").innerHTML="Nhiet do (do F) la "+FDegree
+    }
 </script>
 </body>
 </html>
