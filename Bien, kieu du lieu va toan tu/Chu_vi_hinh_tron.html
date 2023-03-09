@@ -5,12 +5,16 @@
   <title>Chu vi hinh tron</title>
 </head>
 <body>
+Ban kinh la <input type="text" id="radius"> <br>
+<button onclick="tinhtoan()">Tinh toan</button>
+<p id="kq"></p>
 <script>
-  inputRadius = prompt("Ban kinh cua hinh trong la?")
-  let Radius = parseInt(inputRadius)
-  const pi = 3.14
-  let Perimeter = Radius*2*pi
-  document.write("Chu vi hinh tron la "+Area)
+  function tinhtoan(){
+    let radius = parseInt(document.getElementById("radius").value)
+    const pi = 3.14
+    let perimeter = radius*2*pi
+    document.getElementById("kq").innerHTML="Chu vi hinh tron la "+perimeter
+  }
 </script>
 </body>
 </html>
