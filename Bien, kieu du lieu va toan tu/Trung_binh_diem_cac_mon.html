@@ -9,7 +9,8 @@ Diem vat ly <input type="text" id="vatly"> <br>
 Diem hoa hoc <input type="text" id="hoahoc"> <br>
 Diem sinh hoc <input type="text" id="sinhhoc"> <br>
 <button onclick="result()">Tinh toan</button>
-<p id="diemtrungbinh"></p>
+<p id="kq"></p>
+<p id="kq1"></p>
 <script>
     function result() {
 
@@ -17,7 +18,9 @@ Diem sinh hoc <input type="text" id="sinhhoc"> <br>
         let HoaHoc = parseInt(document.getElementById("hoahoc").value)
         let SinhHoc = parseInt(document.getElementById("sinhhoc").value)
         let Dtb = (VatLy + HoaHoc + SinhHoc) / 3
-        document.getElementById("diemtrungbinh").innerHTML = "diem tb la " + Dtb
+        let DiemTong = (VatLy + HoaHoc + SinhHoc)
+        document.getElementById("kq").innerHTML = "diem tb la " + Dtb
+        document.getElementById("kq1").innerHTML = "diem tong la " + DiemTong
     }
 
 
