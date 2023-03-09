@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>simple calculator</title>
+</head>
+<body>
+<table>
+  <tr>
+    <td colspan="2"><input type="text" id="a"></td>
+    <td><p id="operator" style="text-align: center"></p></td>
+    <td colspan="2"><input type="text" id="b"></td>
+    <td><button onclick="kq()">Tinh toan</button></td>
+  </tr>
+  <tr>
+    <td>
+      <button onclick="calculate1()">Cong (+)</button>
+    </td>
+    <td>
+      <button onclick="calculate2()">Tru (&#8722)</button>
+    </td>
+    <td>
+      <button onclick="calculate3()">Nhan (*)</button>
+    </td>
+    <td>
+      <button onclick="calculate4()">Chia (&#8725)</button>
+    </td>
+  </tr>
+</table>
+<br>
+<p id="result"></p>
+<script>
+  let a = parseInt(document.getElementById("a").value)
+  let b = parseInt(document.getElementById("b").value)
+  let result
+  function calculate1(){
+    result = a+b
+    document.getElementById("operator").innerHTML= "+"
+  }
+  function calculate2(){
+    result = a-b
+    document.getElementById("operator").innerHTML= "-"
+  }
+  function calculate3(){
+    result = a*b
+    document.getElementById("operator").innerHTML= "*"
+  }
+  function calculate4(){
+    result = a/b
+    document.getElementById("operator").innerHTML= "/"
+  }
+  function kq(){
+    document.getElementById("result").innerHTML= "Ket qua la "+result
+  }
+
+</script>
+</body>
+</html>
