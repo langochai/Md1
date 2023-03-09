@@ -2,21 +2,25 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Diem trung binh cac mon hoc</title>
+    <title>Diem trung binh</title>
 </head>
 <body>
+Diem vat ly <input type="text" id="vatly"> <br>
+Diem hoa hoc <input type="text" id="hoahoc"> <br>
+Diem sinh hoc <input type="text" id="sinhhoc"> <br>
+<button onclick="result()">Tinh toan</button>
+<p id="diemtrungbinh"></p>
 <script>
-    inputDiemVatly = prompt("diem vat ly")
-    inputDiemHoahoc = prompt("diem hoa hoc")
-    inputDiemSinhhoc = prompt("diem sinh hoc")
-    let vl = parseInt(inputDiemVatly)
-    let hh = parseInt(inputDiemHoahoc)
-    let sh = parseInt(inputDiemSinhhoc)
-    let dtong = vl+hh+sh
-    let dtb = dtong/3
-    document.write('diem tong la ' + dtong)
-    document.write("</br>")
-    document.write('diem trung binh la ' + dtb)
+    function result() {
+
+        let VatLy = parseInt(document.getElementById("vatly").value)
+        let HoaHoc = parseInt(document.getElementById("hoahoc").value)
+        let SinhHoc = parseInt(document.getElementById("sinhhoc").value)
+        let Dtb = (VatLy + HoaHoc + SinhHoc) / 3
+        document.getElementById("diemtrungbinh").innerHTML = "diem tb la " + Dtb
+    }
+
+
 </script>
 </body>
 </html>
