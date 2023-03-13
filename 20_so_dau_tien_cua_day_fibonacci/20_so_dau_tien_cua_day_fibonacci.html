@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>first 20 of fibonacci sequence</title>
+</head>
+<body>
+<script>
+    document.write("so dau tien cua day fibonacci la 1"+"<br>")
+    document.write("so thu 2 cua day fibonacci la 1"+"<br>")
+    let a = 1
+    let b = 1
+    let temp
+    for (let count = 3; count <= 20; count++) {
+        temp = a
+        a = b
+        b = a + temp
+        document.write("so thu "+count+" cua day fibonacci la: "+b+"<br>")
+    }
+</script>
+</body>
+</html>
