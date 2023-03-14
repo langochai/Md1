@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Số nguyên tố</title>
+</head>
+<body>
+<script>
+    function primeNum() {
+        let countFactor = 0
+        let countPrime = 0
+        let inputNumber = parseInt(prompt("nhập số lượng số nguyên tố cần in ra"))
+        if (countPrime <= inputNumber) {
+            for (let check = 2; check < 30; check++) {
+                for (let factor = 1; factor <= check; factor++) {
+                    if (check % factor == 0) {
+                        countFactor = countFactor + 1
+                    }
+                }
+                if (countFactor == 2) {
+                    countPrime = countPrime + 1
+                    document.write("số nguyên tố thứ " + countPrime + " là " + check + "<br>")
+                }
+            }
+        }
+    }
+    primeNum()
+</script>
+</body>
+</html>
