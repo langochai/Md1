@@ -6,28 +6,25 @@
 </head>
 <body>
 <script>
-    function primeNumber() {
-        let countFactor = 0
-        let countPrime = 0
-        for (let checkNumber = 2; checkNumber < 1000; checkNumber++) {
-            if (countPrime < inputNumber) {
-                for (let factor = 1; factor <= checkNumber; factor++) {
-                    if (checkNumber % factor == 0) {
-                        countFactor = countFactor + 1
-                    }
+    let countFactor = 0 // biến điếm số lượng ước số của số đang được kiểm tra
+    let countPrime = 0 // biến đếm số lượng số nguyên tố đã tìm được
+    let inputNumber = parseInt(prompt("nhập số lượng số nguyên tố cần in ra")) // nhập vào số lượng số nguyên tố cần in ra
+    for (let checkNumber = 2; checkNumber < 1000; checkNumber++) {  // bắt đầu kiểm tra từ số 2 và tăng dần lên
+        if (countPrime <= inputNumber) {  //tiếp tục vòng lặp khi chưa tìm đủ số
+            for (let factor = 1; factor <= checkNumber; factor++) { //tìm xem số đang được kiểm tra có bao nhiêu ước số
+                if (checkNumber % factor == 0) {
+                    countFactor = countFactor + 1
                 }
-                if (countFactor == 2) {
-                    countPrime = countPrime + 1
-                    document.write("số nguyên tố thứ " + countPrime + " là " + checkNumber + "<br>")
-                }
-            } else {
-                break
             }
+            if (countFactor == 2) { //nếu số lượng ước số = 2 thì số đang được kiểm tra là một số nguyên tố
+                countPrime = countPrime + 1
+                document.write("số nguyên tố thứ " + countPrime + " là " + checkNumber + "<br>")
+            }
+        } else { //dừng vòng lặp khi đã đủ số
+            break
         }
     }
 
-    let inputNumber = parseInt(prompt("nhập số lượng số nguyên tố cần in ra"))
-    primeNumber(inputNumber)
 </script>
 </body>
 </html>
