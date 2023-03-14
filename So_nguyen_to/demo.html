@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>In ra so nguyen to</title>
+</head>
+<body>
+<script>
+    function checkSNT(number) {
+        if (number < 2) {
+            return false
+        }
+        for (let i = 2; i < number; i++) {
+            if (number % i === 0) {
+                return false
+            }
+        }
+        return true
+    }
+
+    let input = +prompt('Nhap so luong SNT can in')
+    let count = 0
+    let n = 0
+    while (count < input) {
+        if (checkSNT(n)) {
+            count++
+            document.write(`SNT thu ${count} la ${n} <br>`)
+        }
+        n++
+    }
+</script>
+</body>
+</html>
