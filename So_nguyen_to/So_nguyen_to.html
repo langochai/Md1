@@ -6,27 +6,28 @@
 </head>
 <body>
 <script>
-    function primeNum() {
+    function primeNumber() {
         let countFactor = 0
         let countPrime = 0
-        let inputNumber = parseInt(prompt("nhập số lượng số nguyên tố cần in ra"))
-        for (let check = 2; check < 30; check++) {
+        for (let checkNumber = 2; checkNumber < 1000; checkNumber++) {
             if (countPrime < inputNumber) {
-                for (let factor = 1; factor <= check; factor++) {
-                    if (check % factor == 0) {
+                for (let factor = 1; factor <= checkNumber; factor++) {
+                    if (checkNumber % factor == 0) {
                         countFactor = countFactor + 1
                     }
                 }
                 if (countFactor == 2) {
                     countPrime = countPrime + 1
-                    document.write("số nguyên tố thứ " + countPrime + " là " + check + "<br>")
+                    document.write("số nguyên tố thứ " + countPrime + " là " + checkNumber + "<br>")
                 }
             } else {
                 break
             }
         }
     }
-    primeNum()
+
+    let inputNumber = parseInt(prompt("nhập số lượng số nguyên tố cần in ra"))
+    primeNumber(inputNumber)
 </script>
 </body>
 </html>
