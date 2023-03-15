@@ -6,7 +6,46 @@
 </head>
 <body>
 <script>
+    // p1
+    for (let i = 0; i < 5; i++) {
+        for (let j = 0; j <= i; j++) {
+            document.write("*")
+        }
+        document.write('<br>')
+    }
+    document.write('<br>')
+    // p2
+    for (let i = 5; i > 0; i--) {
+        for (let j = i; j >0; j--) {
+            document.write('*')
+        }
+        document.write('<br>')
+    }
+    document.write('<br>')
+    //p3
+    for (let i = 0; i <5; i++) {
+        for (let j = 4-i; j >0; j--) {
+            document.write('&nbsp&nbsp')
+        }
+        for (let k = 0; k <= i; k++) {
+            document.write('*')
+        }
 
+        document.write('<br>')
+    }
+    document.write('<br>')
+    //p4
+    for (let i = 0; i <5; i++) {
+        for (let k = 1; k <= i; k++) {
+            document.write('&nbsp&nbsp')
+        }
+        for (let j = 5-i; j >0; j--) {
+            document.write('*')
+        }
+
+        document.write('<br>')
+    }
+    document.write('<br>')
 </script>
 </body>
 </html>
