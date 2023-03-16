@@ -13,7 +13,7 @@
     let data = "";
 
     for (let i = 0; i < 5; i++) {
-        board[i] = new Array(0, 0, 0, 0, 0);
+        board[i] = ["o","o","o","o","o"];
     }
     for (let i = 0; i < 5; i++) {
         data += '<br>';
@@ -25,9 +25,9 @@
     b.innerHTML = data;
 
     function changeValue() {
-        let positionX = +prompt("nhap toa do X")
-        let positionY = +prompt("nhap toa do Y")
-        board[positionX][positionY] = "x"
+        let X = +prompt("nhap toa do X")
+        let Y = +prompt("nhap toa do Y")
+        board[X][Y] = "*"
         data = ""
         for (let i = 0; i < 5; i++) {
             data += '<br>';
