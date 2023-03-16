@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>chia het</title>
+</head>
+<body>
+<input type="text" id="a"> nhập a <br>
+<input type="text" id="b"> nhập b <br>
+<input type="text" id="c"> nhập c <br>
+<button onclick="calculate()">kiểm tra</button>
+<p id="result"></p>
+<script>
+    function calculate(){
+        let a = parseInt(document.getElementById("a").value)
+        let b = parseInt(document.getElementById("b").value)
+        let c = parseInt(document.getElementById("c").value)
+        let max = Math.max(a,b,c)
+        document.getElementById("result").innerHTML=max
+
+
+    }
+</script>
+</body>
+</html>
