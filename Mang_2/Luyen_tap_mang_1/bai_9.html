@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  let a = prompt("nhập chuỗi thứ nhất (có 10 số nguyên")
+  let b = prompt("nhập chuỗi thứ hai (có 10 số nguyên")
+  let arrA = a.split(",").map(Number)
+  let arrB = b.split(",").map(Number)
+  let arrC = arrA.concat(arrB)
+  document.write(arrC.join())
+</script>
+</body>
+</html>
