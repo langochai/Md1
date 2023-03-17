@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tic Tac Toe</title>
+</head>
+<body>
+<p id="carogame"></p>
+<script>
+    let b = document.getElementById("carogame");
+
+    let board = [];
+    let data = "";
+    var turn = 1
+
+    for (let i = 0; i < 5; i++) {
+        board[i] = ["z","z","z","z","z"];
+    }
+    for (let i = 0; i < 5; i++) {
+        data += '<br>';
+        for (let j = 0; j < 5; j++) {
+            data += board[i][j] + '&nbsp&nbsp';
+        }
+    }
+    data += "<br/><br/><input type='button' value='Change Value' onclick='changeValue()'>";
+    b.innerHTML = data;
+
+    function changeValue() {
+        let X = +prompt("nhap toa do X")
+        let Y = +prompt("nhap toa do Y")
+        if (turn%2==1){
+            board[X][Y] = "X"
+        }else {
+            board[X][Y] = "O"
+        }
+        turn ++
+        data = ""
+        for (let i = 0; i < 5; i++) {
+            data += '<br>';
+            for (let j = 0; j < 5; j++) {
+                data += board[i][j] + '&nbsp&nbsp';
+            }
+        }
+        data += "<br/><br/><input type='button' value='Change Value' onclick='changeValue()'>";
+        b.innerHTML = data;
+
+        for (let i = 0; i < 5; i++) {
+            for (let j = 0; j < 5; j++) {
+                if ((board[i][j] == "X" && board[i+1][j] == "X" && board[i+2][j] == "X") ||
+                    ((board[i][j] == "X" && board[i][j+1] == "X" && board[i][j+2] == "X"))){
+                    alert(" X thắng");
+                } else if ((board[i][j] == "O" && board[i+1][j] == "O" && board[i+2][j] == "O") ||
+                    ((board[i][j] == "O" && board[i][j+1] == "O" && board[i][j+2] == "O"))){
+                    alert(" O thắng");
+                }
+                if ((board[i][j] == "X" && board[i+1][j+1] == "X" && board[i+2][j+2] == "X") ||
+                    ((board[i][j] == "X" && board[i+1][j-1] == "X" && board[i+2][j-2] == "X"))){
+                    alert(" X thắng");
+                } else if ((board[i][j] == "O" && board[i+1][j+1] == "O" && board[i+2][j+2] == "O") ||
+                    ((board[i][j] == "O" && board[i+1][j-1] == "O" && board[i+2][j-2] == "O"))){
+                    alert(" O thắng");
+                }
+            }
+        }
+    }
+</script>
+</body>
+</html>

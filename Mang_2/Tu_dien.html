@@ -14,20 +14,21 @@
     let arrVi = ["chuối", "táo", "dưa", "chanh", "cam"]
     let result = ""
     let indexEN = -1
+
     function trsl() {
-    let str = document.getElementById("string").value
-    for (let i = 0; i < arrEn.length; i++) {
-        if (str == arrEn[i]) {
-            indexEN = i
+        let str = document.getElementById("string").value
+        for (let i = 0; i < arrEn.length; i++) {
+            if (str == arrEn[i]) {
+                indexEN = i
+            }
         }
-    }
-    for (let j = 0; j < arrVi.length; j++) {
-        if (indexEN == j) {
-            result = arrVi[j]
+        for (let j = 0; j < arrVi.length; j++) {
+            if (indexEN == j) {
+                result = arrVi[j]
+            }
         }
+        document.getElementById("result").innerHTML = result
     }
-    document.getElementById("result").innerHTML = result
-}
 
 
 </script>
