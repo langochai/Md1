@@ -20,7 +20,10 @@
   if (flag == false){
     document.write(`V is NOT in the string`)
   } else {
-    arr.splice(index,1)
+      for (let i = index; i < arr.length - 1; i++) {
+          arr[i] = arr[i+1]
+      }
+      arr[arr.length-1] = 0
     document.write(arr.join())
   }
 </script>
