@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Trung bình tổng</title>
+</head>
+<body>
+<script>
+  let arr = [123,14,1,5,12,415,1,23,14,125,125,123,]
+  document.write (arr.join())
+  document.write ("<br>")
+  let sum = 0
+  let avg
+  for (let i = 0; i < arr.length; i++) {
+    sum += arr[i]
+  }
+  avg = sum / arr.length
+  document.write(`Trung bình tổng là ${avg}`)
+</script>
+</body>
+</html>

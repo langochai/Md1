@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Đảo ngược vị trí của các phần tử trong mảng</title>
+</head>
+<body>
+<script>
+    let arr = [1, 23, 12, 41, 52, 131, 54, 15, 124, 34]
+    document.write(arr.join())
+    document.write("<br>")
+    let first = 0
+    let last = arr.length - 1
+    while (first < last) {
+        let temp = arr[first]
+        arr[first] = arr[last]
+        arr[last] = temp
+        first++
+        last--
+    }
+    document.write(arr.join())
+</script>
+</body>
+</html>

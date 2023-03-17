@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Giá trị lớn nhất trong mảng và vị trí của nó</title>
+</head>
+<body>
+<script>
+  let arr = [21,3,41,2,41,5,51,23,15,15,124,6,12,4]
+  document.write (arr.join())
+  document.write ("<br>")
+  let max = arr[0]
+  let index = 0
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i]>max){
+      max = arr[i]
+      index = i
+    }
+  }
+  document.write(`Giá trị lớn nhất là ${max}, ở vị trí ${index}`)
+</script>
+</body>
+</html>
