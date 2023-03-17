@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tu dien</title>
+</head>
+<body>
+<label for="string">Nhập từ: </label>
+<input type="text" id="string">
+<button onclick="translate()">Dịch</button>
+<p id="result"></p>
+<script>
+let arrEn = ["banana", "apple", "melon", "lemon", "orange"]
+let arrVi = ["chuối", "táo", "dưa", "chanh", "cam"]
+let result = ""
+let indexEN = 0
+let str = document.getElementById("string").value
+for (let i = 0; i < arrEn.length; i++) {
+    if (str == arrEn[i]){
+        indexEN = i
+    }
+}
+for (let j = 0; j < arrVi.length; j++) {
+    if (indexEN == j){
+        result = arrVi[j]
+    }
+}
+
+
+</script>
+</body>
+</html>
