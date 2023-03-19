@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="dd6f9f48-4bb1-4025-bb5d-463ccb6588f6" name="Changes" comment="" />
+    <list default="true" id="dd6f9f48-4bb1-4025-bb5d-463ccb6588f6" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/May_tinh_don_gian/May_tinh_don_gian.html" beforeDir="false" afterPath="$PROJECT_DIR$/Cau_truc_dieu_kien/May_tinh_don_gian/May_tinh_don_gian.html" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -43,6 +45,8 @@
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\PC\Documents\GitHub\Md1\Cau_truc_dieu_kien" />
+      <recent name="C:\Users\PC\Documents\GitHub\Md1\Variable, data type and operator" />
       <recent name="C:\Users\PC\Documents\GitHub\Md1\Git &amp; HTML\Tao_bang_nang_cao" />
       <recent name="C:\Users\PC\Documents\GitHub\Md1\Git &amp; HTML" />
       <recent name="C:\Users\PC\Documents\GitHub\Md1\Git &amp; HTML\Tao_bang_co_ban" />
@@ -59,7 +63,7 @@
       <workItem from="1679036343180" duration="5500000" />
       <workItem from="1679042894151" duration="808000" />
       <workItem from="1679044231694" duration="605000" />
-      <workItem from="1679209450421" duration="794000" />
+      <workItem from="1679209450421" duration="1124000" />
     </task>
     <servers />
   </component>
