@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai7</title>
+</head>
+<body>
+<script>
+  function bai7(a,b){
+    let arr = []
+    arr.push(a)
+    arr.push(b)
+    document.write(`hai số đã nhập là ${arr} <br>`)
+    arr.shift()
+    arr.push(a)
+    document.write(`sau khi đổi chỗ: ${arr} <br>`)
+  }
+  let a = +prompt("nhập số a:")
+  let b = +prompt("nhập số b:")
+  bai7(a,b)
+</script>
+</body>
+</html>
