@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai3</title>
+</head>
+<body>
+<script>
+  function factorial(num){
+    if (num === 0)
+    {
+      return 1;
+    }
+    return num * factorial(num-1);
+  }
+  let number = +prompt("nhập số")
+  alert(`kết quả là ${factorial(number)}`)
+</script>
+</body>
+</html>
