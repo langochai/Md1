@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai8</title>
+</head>
+<body>
+<script>
+    function bai8(arr){
+    let i = 0
+    let j = arr.length
+    let temp = 0
+    while (i<j){
+      temp = arr[j]
+      arr[j] = arr[i]
+      arr[i] = temp
+      i++
+      j--
+    }
+    return arr
+  }
+    let input = prompt("nhập mảng số nguyên:")
+    let arr = input.split(",")
+    document.write(`mảng đã nhập là ${arr}<br>`)
+    document.write(`mảng đã đảo ngược là ${bai8(arr)}`)
+</script>
+</body>
+</html>
