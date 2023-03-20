@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chuyển đổi giữa </title>
+</head>
+<body>
+<label>nhập giá trị</label>
+<input id="temperature">
+<select id="type" name="type">
+    <option value="meter">METER</option>
+    <option value="foot">FOOT</option>
+</select>
+<button onclick="cal()"> Convert</button>
+<p id="result"></p>
+<script>
+    function cal(){
+        let type = document.getElementById("type").value
+        let temperature = +document.getElementById("temperature").value
+        if (type == "meter"){
+            let result = 3.279 * temperature
+            document.getElementById("result").innerHTML = `${result} feet`
+        } else {
+            let result = 0.305 * temperature
+            document.getElementById("result").innerHTML = `${result} meters`
+        }
+    }
+</script>
+</body>
+</html>
