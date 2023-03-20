@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai5</title>
+</head>
+<body>
+<script>
+  function bai5(a,b,c){
+    let min = a
+    if (min > b){
+      min = b
+    }
+    if (min > c){
+      min = c
+    }
+    return min
+  }
+  let a = +prompt("nhập số a")
+  let b = +prompt("nhập số b")
+  let c = +prompt("nhập số c")
+  alert(`số nhỏ nhất là ${bai5(a,b,c)}`)
+</script>
+</body>
+</html>
