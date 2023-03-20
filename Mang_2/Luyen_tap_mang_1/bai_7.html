@@ -10,21 +10,23 @@
     let arr = str.split(",").map(Number)
     let V = +prompt("nhập số V để kiểm tra")
     let flag = false
-    let indexDupe = []
+    let indexDupe = [] // mảng này dùng để lưu lại vị trí các phần tử trùng với số V
+
     for (let i = 0; i < arr.length; i++) {
-        if (V == arr[i]) {
+        if (V === arr[i]) {
             flag = true
             indexDupe.push(i)
         }
     }
-    console.log(indexDupe)
-    if (flag == false) {
+
+    if (flag === false) {
         document.write(`V is NOT in the string`)
     } else {
+        let a = 0
         for (let i = 0; i < indexDupe.length; i++) {
-            arr.splice(indexDupe[i], 1)
+            arr.splice(indexDupe[i]-a,1)
             arr.push(0)
-            indexDupe[i+1] -= 1
+            a++
         }
         document.write(arr)
     }
