@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Kiem tra so nguyen to</title>
+</head>
+<body>
+<script>
+  function isPrime(num) {
+    if (num < 2) {
+      return false
+    } else {
+      let countFactor = 0
+      for (let i = 2; i <num; i++) {
+        if (num%i == 0){
+          countFactor++
+            return false
+        }
+      }
+      return true
+    }
+  }
+  let number = +prompt(" nhập số cần được kiểm tra:")
+  if (isPrime(number)){
+      alert(`${number} là số nguyên tố`)
+  } else {
+      alert(`${number} KHÔNG phải là số nguyên tố`)
+  }
+</script>
+</body>
+</html>
