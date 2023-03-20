@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai5</title>
+</head>
+<body>
+<label for="string">Ngôi sao: </label>
+<input type="text" id="string">
+<button onclick="checkStar()">Kiểm tra</button>
+<p id="result"></p>
+<script>
+  let ngoiSao = ['Polaris', 'Aldebaran', 'Deneb', 'Vega', 'Altair', 'Dubhe', 'Regulus']
+  let chomSao = ['Ursa Minor', 'Tarurus', 'Cygnus', 'Lyra', 'Aquila', 'Ursa Major', 'Leo']
+  let result = ""
+  let index = -1
+
+  function checkStar() {
+    let str = document.getElementById("string").value
+    for (let i = 0; i < ngoiSao.length; i++) {
+      if (str == ngoiSao[i]) {
+        index = i
+      }
+    }
+    for (let j = 0; j < chomSao.length; j++) {
+      if (index == j) {
+        result = chomSao[j]
+      }
+    }
+    document.getElementById("result").innerHTML = result
+  }
+
+
+</script>
+</body>
+</html>
