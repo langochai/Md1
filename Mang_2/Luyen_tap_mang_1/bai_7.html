@@ -6,26 +6,28 @@
 </head>
 <body>
 <script>
-  let str = prompt("nhập chuỗi 10 số nguyên")
-  let arr = str.split(",").map(Number)
-  let V = +prompt("nhập số V để kiểm tra")
-  let index = -1
-  let flag = false
-  for (let i = 0; i < arr.length; i++) {
-    if (V == arr[i]){
-      flag = true
-      index = i
+    let str = prompt("nhập chuỗi 10 số nguyên")
+    let arr = str.split(",").map(Number)
+    let V = +prompt("nhập số V để kiểm tra")
+    let flag = false
+    let indexDupe = []
+    for (let i = 0; i < arr.length; i++) {
+        if (V == arr[i]) {
+            flag = true
+            indexDupe.push(i)
+        }
     }
-  }
-  if (flag == false){
-    document.write(`V is NOT in the string`)
-  } else {
-      for (let i = index; i < arr.length - 1; i++) {
-          arr[i] = arr[i+1]
-      }
-      arr[arr.length-1] = 0
-    document.write(arr.join())
-  }
+    console.log(indexDupe)
+    if (flag == false) {
+        document.write(`V is NOT in the string`)
+    } else {
+        for (let i = 0; i < indexDupe.length; i++) {
+            arr.splice(indexDupe[i], 1)
+            arr.push(0)
+            indexDupe[i+1] -= 1
+        }
+        document.write(arr)
+    }
 </script>
 </body>
 </html>

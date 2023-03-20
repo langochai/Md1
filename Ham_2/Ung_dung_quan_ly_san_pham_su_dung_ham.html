@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Quan ly san pham</title>
+</head>
+<body>
+<h1>Add new product</h1>
+<input type="text" placeholder="New product" id="newProduct">
+<button onclick="addProduct()">Add</button>
+<h1>Display all product</h1>
+<p id="result"></p>
+</body>
+<script>
+  let b = document.getElementById("result")
+  let data = '<table>'
+  function addProduct(){
+    let input = document.getElementById("newProduct").value
+      data += '<tr><td>' + input + '<button>Edit</button>' + '<button>Delete</button>'
+  }
+</script>
+</html>
