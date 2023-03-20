@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  function minArray(arr) {
+    if(arr.length == 0) {
+      document.write(`mảng rỗng`)
+    } else {
+      let min = arr[0];
+
+      for (let i = 1; i < arr.length; i++) {
+        if (arr[i] < min) {
+          min = arr[i];
+        }
+      }
+      document.write(`phần tử nhỏ nhất có giá trị là ${min}`)
+    }
+  }
+  let array = [1,2,43,5,1,12,5,1,51,531,3]
+  minArray(array)
+</script>
+</body>
+</html>
