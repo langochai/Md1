@@ -16,7 +16,10 @@
   let data = '<table>'
   function addProduct(){
     let input = document.getElementById("newProduct").value
-      data += '<tr><td>' + input + '<button>Edit</button>' + '<button>Delete</button>'
+    data += '<tr><td>' + input + '<button onclick="edit()">Edit</button>' + '<button onclick="delete()">Delete</button>'
+              + '</td></tr>'
+    b.innerHTML = data
   }
+  
 </script>
 </html>
