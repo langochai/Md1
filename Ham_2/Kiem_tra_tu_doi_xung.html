@@ -5,6 +5,29 @@
     <title>Kiểm tra từ đối xứng</title>
 </head>
 <body>
+<script>
+    function isPalidrome(str) {
+        let flag = true
+        let i = 0
+        let j = str.length - 1
+        while (i < j) {
+            if (str[i] !== str[j]) {
+                flag = false
+                break
+            }
+            i++
+            j--
+        }
+        return flag
+    }
 
+    let str = prompt("nhập từ cần được kiểm tra:")
+    if (isPalidrome(str)){
+        document.write(`từ đã nhập có đối xứng`)
+    } else {
+        document.write(`từ đã nhập KHÔNG đối xứng`)
+    }
+
+</script>
 </body>
 </html>
