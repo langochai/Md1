@@ -12,14 +12,21 @@
 <p id="result"></p>
 </body>
 <script>
-  let b = document.getElementById("result")
-  let data = '<table>'
-  function addProduct(){
-    let input = document.getElementById("newProduct").value
-    data += '<tr><td>' + input + '<button onclick="edit()">Edit</button>' + '<button onclick="delete()">Delete</button>'
-              + '</td></tr>'
-    b.innerHTML = data
-  }
+    let b = document.getElementById("result")
+    let data = '<table>'
+
+    function addProduct() {
+        let input = document.getElementById("newProduct").value
+        data += '<tr><td colspan="3">' + input +'</td><td>'+ '<button onclick="edit()">Edit</button>' + '<button onclick="delete()">Delete</button>'
+            + '</td></tr>'
+        b.innerHTML = data + '</table>'
+    }
+    // function edit(){
+    //     let input = prompt("nhập thay đổi:")
+    // }
+    // function delete(){
+    //
+    // }
 
 </script>
 </html>
