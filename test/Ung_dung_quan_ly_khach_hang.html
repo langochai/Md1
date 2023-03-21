@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html ng-app="MyApp">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Quan Ly San Pham - AngularJS</title>
+
+  <!-- Nhung thu vien bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Nhung js angularjs vao du an (Framework) -->
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+
+  <style type="text/css">
+    .form-group {
+      margin-bottom: 15px;
+    }
+  </style>
+</head>
+<body ng-controller="MyController">
+<div class="container">
+  <div class="card">
+    <div class="card-header bg-info text-white" style="font-weight: bold;">
+      NHAP THONG TIN SAN PHAM
+    </div>
+    <div class="card-body">
+      <form method="post" ng-submit="saveProduct()">
+        <div class="form-group">
+          <label>Ten San Pham: </label>
+          <input required type="text" name="product_name" placeholder="Enter product name" class="form-control" ng-model="product_name">
+        </div>
+        <div class="form-group">
+          <label>Ten NSX: </label>
+          <select required class="form-control" name="manufacturer_name" ng-model="manufacturer_name" ng-change="changeManufacturer()">
+            <option value="">-- Chon NSX --</option>
+            <option value="{{ item.name }}" ng-repeat="item in dataList track by $index">{{ item.name }}</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Danh Muc SP: </label>
+          <select required class="form-control" name="category_name" ng-model="category_name">
+            <option value="">-- Chon Danh Muc --</option>
+            <option value="{{ v }}" ng-repeat="v in categoryList track by $index">{{ v }}</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Gia: </label>
+          <input required type="number" name="price" placeholder="Enter price" class="form-control" ng-model="price">
+        </div>
+        <div class="form-group">
+          <label>So Luong: </label>
+          <input required type="number" name="quantity" placeholder="Enter quanity" class="form-control" ng-model="quantity">
+        </div>
+        <div class="form-group">
+          <label>Tong Gia: </label>
+          <input type="text" name="total_price" placeholder="Enter total price" class="form-control" disabled value="{{ price * quantity | currency:'':0 }}">
+        </div>
+        <div class="form-group">
+          <button class="btn btn-info text-white" type="submit">Luu San Pham</button>
+          <button class="btn btn-warning" type="button" ng-click="resetForm()">Xoa Nhap</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div class="card" style="margin-top: 15px">
+    <div class="card-header bg-info text-white" style="font-weight: bold;">
+      QUAN LY DANH SACH SAN PHAM
+    </div>
+    <div class="card-body">
+      <table class="table table-bordered">
+        <thead>
+        <tr>
+          <th>STT</th>
+          <th>Ten SP</th>
+          <th>NSX</th>
+          <th>Danh Muc</th>
+          <th>Gia</th>
+          <th>So Luong</th>
+          <th>Tong Tien</th>
+          <th></th>
+          <th></th>
+        </tr>
+        </thead>
+        <tbody>
+        <!-- START: Hien thi thong tin 1 san pham -->
+        <tr ng-repeat="item in productList track by $index">
+          <td>{{ $index + 1 }}</td>
+          <td>{{ item.product_name }}</td>
+          <td>{{ item.manufacturer_name }}</td>
+          <td>{{ item.category_name }}</td>
+          <td>{{ item.price | currency:'':0 }}</td>
+          <td>{{ item.quantity | currency:'':0 }}</td>
+          <td>{{ item.price * item.quantity | currency:'':0 }}</td>
+          <td>
+            <button class="btn btn-warning" ng-click="editItem($index)">Sua</button>
+          </td>
+          <td>
+            <button class="btn btn-danger" ng-click="removeItem($index)">Xoa</button>
+          </td>
+        </tr>
+        <!-- END: Hien thi thong tin 1 san pham -->
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<script type="text/javascript">
+  var app = angular.module('MyApp', [])
+  app.controller('MyController', ['$scope', function ($scope) {
+    $scope.dataList = [
+      {
+        'name': 'Apple',
+        'categoryList': ['A01', 'A02', 'A03']
+      }, {
+        'name': 'Samsung',
+        'categoryList': ['S01', 'S02', 'S03', 'S04', 'S05']
+      }, {
+        'name': 'LG',
+        'categoryList': ['LG01', 'LG02']
+      }
+    ]
+
+    $scope.categoryList = []
+
+    $scope.changeManufacturer = function() {
+      $scope.categoryList = []
+
+      for(item of $scope.dataList) {
+        if(item.name == $scope.manufacturer_name) {
+          $scope.categoryList = item.categoryList
+          break
+        }
+      }
+    }
+
+    $scope.productList = []
+
+    $scope.saveProduct = function() {
+      var item = {
+        'product_name': $scope.product_name,
+        'manufacturer_name': $scope.manufacturer_name,
+        'category_name': $scope.category_name,
+        'price': $scope.price,
+        'quantity': $scope.quantity,
+      }
+
+      if($scope.currentIndex >= 0) {
+        //update product
+        $scope.productList[$scope.currentIndex] = item
+        $scope.currentIndex = -1
+      } else {
+        $scope.productList.push(item)
+      }
+
+      $scope.resetForm()
+    }
+
+    $scope.resetForm = function() {
+      $scope.product_name = ''
+      $scope.manufacturer_name = ''
+      $scope.changeManufacturer()
+
+      $scope.category_name = ''
+      $scope.price = 0
+      $scope.quantity = 0
+    }
+
+    $scope.currentIndex = -1
+    $scope.editItem = function(index) {
+      $scope.currentIndex = index
+
+      $scope.product_name = $scope.productList[index].product_name
+      $scope.manufacturer_name = $scope.productList[index].manufacturer_name
+      $scope.changeManufacturer()
+
+      $scope.category_name = $scope.productList[index].category_name
+      $scope.price = $scope.productList[index].price
+      $scope.quantity = $scope.productList[index].quantity
+    }
+
+    $scope.removeItem = function(index) {
+      var option = confirm('Ban co chac chan muon xoa san pham nay khong???')
+      if(!option) return
+
+      $scope.productList.splice(index, 1)
+    }
+  }])
+</script>
+</body>
+</html>
