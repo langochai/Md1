@@ -7,26 +7,14 @@
 <body>
 <h1>Add new product</h1>
 <input type="text" placeholder="New product" id="newProduct">
+<input type="text" placeholder="Price" id="newPrice">
 <button onclick="addProduct()">Add</button>
 <h1>Display all product</h1>
 <p id="result"></p>
 </body>
 <script>
     let b = document.getElementById("result")
-    let data = '<table>'
-
-    function addProduct() {
-        let input = document.getElementById("newProduct").value
-        data += '<tr><td colspan="5">' + input +'</td><td>'+ '<button onclick="edit()">Edit</button>' + '<button onclick="del()">Delete</button>'
-            + '</td></tr>'
-        b.innerHTML = data + '</table>'
-    }
-    // function edit(){
-    //     let input = prompt("nhập thay đổi:")
-    // }
-    // function del(){
-    //
-    // }
+    let data = ""
 
 </script>
 </html>
