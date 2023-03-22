@@ -2,9 +2,40 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Funny circles</title>
 </head>
 <body>
+<canvas id="mycanvas" width="1000px" height="500px" style="border: solid blue 1px"></canvas>
+<script>
+    class Circle {
+        x;
+        y;
+        radius;
 
+        constructor(x, y, radius) {
+            this.x = Math.random() * x
+            this.y = Math.random() * y
+            this.radius = radius
+        }
+        randomColor(){
+            let red = Math.random() * 255
+            let green = Math.random() * 255
+            let blue = Math.random() * 255
+            return (`rgb (${red}, ${green}, ${blue})`)
+        }
+
+        drawCircle() {
+            let canvas = document.getElementById('mycanvas')
+            let ctx = canvas.getContext('2d')
+            ctx.beginPath()
+            ctx.arc(this.x, this.y, this.radius, 0, 2 * Math.PI)
+            ctx.fillStyle = this.randomColor()
+            ctx.fill()
+            ctx.closePath()
+        }
+    }
+    let circle = new Circle(750,750,50)
+    circle.drawCircle()
+</script>
 </body>
 </html>
