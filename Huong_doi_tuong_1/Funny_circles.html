@@ -28,13 +28,15 @@
             let canvas = document.getElementById('mycanvas')
             let ctx = canvas.getContext('2d')
             ctx.beginPath()
-            ctx.arc(this.x, this.y, this.radius, 0, 2 * Math.PI)
+            ctx.arc(Math.random() * this.x, Math.random() * this.y, Math.random() * this.radius, 0, 2 * Math.PI)
             ctx.fillStyle = this.randomColor()
             ctx.fill()
             ctx.closePath()
         }
     }
     let circle = new Circle(750,750,50)
+    circle.drawCircle()
+    circle.drawCircle()
     circle.drawCircle()
 </script>
 </body>
