@@ -5,7 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="dd6f9f48-4bb1-4025-bb5d-463ccb6588f6" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/Huong_doi_tuong_1/Xay_dung_lop_mo_ta_hinh_chu_nhat.html" beforeDir="false" afterPath="$PROJECT_DIR$/Huong_doi_tuong_1/Xay_dung_lop_mo_ta_hinh_chu_nhat.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Huong_doi_tuong_1/Xay_dung_Temperature.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -70,7 +70,7 @@
       <workItem from="1679366595073" duration="6848000" />
       <workItem from="1679380594357" duration="4980000" />
       <workItem from="1679446176930" duration="2960000" />
-      <workItem from="1679466686763" duration="1772000" />
+      <workItem from="1679466686763" duration="2072000" />
     </task>
     <servers />
   </component>
