@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Xay dung lop date</title>
+</head>
+<body>
+<script>
+    class MyDate {
+        day;
+        month;
+        year;
+        constructor(ngay, thang, nam) {
+            this.day = ngay
+            this.month = thang
+            this.year = nam
+        }
+        // setDay(day){
+        //     this.day = day
+        // }
+        // setMonth(month){
+        //     this.month = month
+        // }
+        // setYear(year){
+        //     this.year = year
+        // }
+        // getDay(){
+        //     return this.day
+        // }
+        // getMonth(){
+        //     return this.month
+        // }
+        // getYear(){
+        //     return this.year
+        // }
+        setDate(ngay, thang, nam){
+            this.day = ngay
+            this.month = thang
+            this.year = nam
+        }
+    }
+    let newDate = new MyDate(22, 3, 2023)
+    console.log(newDate)
+    newDate.setDate(5,5,2033)
+</script>
+</body>
+</html>
