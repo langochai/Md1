@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Temperature</title>
+</head>
+<body>
+<script>
+  class Temperature{
+    Cdegree;
+    constructor(C) {
+      this.Cdegree = C
+    }
+    convertToF(){
+      return (this.Cdegree * 9 / 5) +32
+    }
+    convertToK(){
+      return this.Cdegree + 273.15
+    }
+  }
+  let temperature = new Temperature(25)
+  document.write(temperature.convertToF() + '<br>')
+  document.write(temperature.convertToK())
+</script>
+</body>
+</html>
