@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dien thoai</title>
+</head>
+<body>
+<script>
+    class Mobile {
+        battery
+        status
+        charging
+        inputMessage
+        receivedMessage
+        sentMessage
+
+        constructor(battery) {
+            this.battery = battery
+        }
+
+        isOn() {
+            this.status = true
+        }
+
+        isOff() {
+            this.status = false
+        }
+        getStatus(){
+            return this.status
+        }
+        isCharging(){
+            this.charging = true
+        }
+        stopCharging(){
+            this.charging = false
+        }
+
+    }
+</script>
+</body>
+</html>
