@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>convert time type</title>
+</head>
+<body>
+<script>
+    // function timeConversion(s) {
+    //     // Write your code here
+    //     let arr = s.split("")
+    //     console.log(arr)
+    //     let type = []
+    //     type.push(arr[8])
+    //     type.push(arr[9])
+    //     console.log(type)
+    //     arr.pop()
+    //     arr.pop()
+    //     console.log(arr)
+    //     console.log(arr.join(''))
+    //     // if (type === ['A','M']){
+    //     //     arr.splice(9,2)
+    //     //     return arr
+    //     // } else if (type === ['P','M']){
+    //     //     arr[1]=arr[1]+12
+    //     //     arr[2]=arr[2]+12
+    //     //     arr.splice(9,2)
+    //     //     return arr
+    //     // }
+    // }
+    function timeConversion(s) {
+        // Write your code here
+        let type = []
+        type.push(s[s.length-2])
+        type.push(s[s.length-1])
+        console.log(type)
+        if (type.join("") === 'AM'){
+            let arr = s.split("")
+            let change = arr[0].concat(arr[1])
+            if(change==='24'){
+                arr[0]='0'
+                arr[1]='0'
+            }
+            arr.pop()
+            arr.pop()
+            console.log(arr)
+            return arr.join("")
+        } else if (type.join("") === 'PM'){
+            let change = +s[0].concat(s[1])
+            if(change ===12 ){
+                let arr = s.split("")
+                arr.pop()
+                arr.pop()
+                return arr.join("")
+            }else {
+                change = change + 12
+                let result = Array.from(String(change), Number);
+                let arr = s.split("")
+                arr[0] = result[0]
+                arr[1] = result[1]
+                arr.pop()
+                arr.pop()
+                return arr.join("")
+            }
+        }
+    }
+
+document.write(timeConversion('12:40:22AM'))
+</script>
+</body>
+</html>
