@@ -9,15 +9,16 @@
     class Mobile {
         battery
         status
-        charging
-        inputMessage
-        receivedMessage
-        sentMessage
+        message
+        inbox
+        outbox
 
         constructor(battery) {
             this.battery = battery
         }
-
+        checkStatus(){
+            return this.status
+        }
         isOn() {
             this.status = true
         }
@@ -25,16 +26,9 @@
         isOff() {
             this.status = false
         }
-        getStatus(){
-            return this.status
-        }
-        isCharging(){
-            this.charging = true
-        }
-        stopCharging(){
-            this.charging = false
-        }
+        writeMessage(){
 
+        }
     }
 </script>
 </body>
