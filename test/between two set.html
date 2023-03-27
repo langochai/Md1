@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>between two set</title>
+</head>
+<body>
+<script>
+    function findN(a, b) {
+        a.sort(function (a, b) {
+            return a - b
+        });
+        console.log(a)
+        b.sort(function (a, b) {
+            return a - b
+        });
+        console.log(b)
+        let checkArr = []
+        for (let i = a[a.length-1]; i <= b[0] ; i++) {
+            checkArr.push(i)
+        }
+        for (let i = 0; i < b.length; i++) {
+            for (let j = 0; j < checkArr.length; j++) {
+                if (b[i] % checkArr[j] != 0) {
+                    checkArr.splice(j,1,-1)
+                }
+            }
+        }
+        for (let i = 0; i < a.length; i++) {
+            for (let j = 0; j < checkArr.length; j++) {
+                if (checkArr[j] % a[i] != 0) {
+                    checkArr.splice(j,1,-1)
+                }
+            }
+        }
+        for (let i = 0; i < checkArr.length; i++) {
+            if (checkArr[i] == -1){
+                checkArr.splice(i,1)
+                i--
+            }
+        }
+        console.log(checkArr)
+        return checkArr.length
+    }
+
+    let a = [3,4]
+    let b = [24,48]
+    console.log(findN(a,b))
+</script>
+</body>
+</html>

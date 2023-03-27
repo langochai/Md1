@@ -4,7 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="dd6f9f48-4bb1-4025-bb5d-463ccb6588f6" name="Changes" comment="" />
+    <list default="true" id="f5e09a37-bfc6-43f2-bdd3-6cc3e49ae750" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/test/between two set.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/test them ve splice.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -23,7 +27,7 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="ProjectId" id="2N8CUvGek00jZlkBvzUEvp0vnTT" />
+  <component name="ProjectId" id="2NZw4XaMY0EUiJQrV6hXGvTFPQe" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -41,40 +45,16 @@
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
-  <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\PC\Documents\GitHub\Md1\Vong_lap (Loop)\Ve_hinh" />
-      <recent name="C:\Users\PC\Documents\GitHub\Md1\Vong_lap (Loop)" />
-      <recent name="C:\Users\PC\Documents\GitHub\Md1\Cau_truc_dieu_kien" />
-      <recent name="C:\Users\PC\Documents\GitHub\Md1\Variable, data type and operator" />
-      <recent name="C:\Users\PC\Documents\GitHub\Md1\Git &amp; HTML\Tao_bang_nang_cao" />
-    </key>
-  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="dd6f9f48-4bb1-4025-bb5d-463ccb6588f6" name="Changes" comment="" />
-      <created>1679036341991</created>
+      <changelist id="f5e09a37-bfc6-43f2-bdd3-6cc3e49ae750" name="Changes" comment="" />
+      <created>1679884721249</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1679036341991</updated>
-      <workItem from="1679036343180" duration="5500000" />
-      <workItem from="1679042894151" duration="808000" />
-      <workItem from="1679044231694" duration="605000" />
-      <workItem from="1679209450421" duration="1745000" />
-      <workItem from="1679279185098" duration="8297000" />
-      <workItem from="1679294033935" duration="10926000" />
-      <workItem from="1679326313917" duration="1317000" />
-      <workItem from="1679366595073" duration="6848000" />
-      <workItem from="1679380594357" duration="4980000" />
-      <workItem from="1679446176930" duration="2960000" />
-      <workItem from="1679466686763" duration="3825000" />
-      <workItem from="1679477398988" duration="3333000" />
-      <workItem from="1679527473249" duration="1000" />
-      <workItem from="1679540489514" duration="4226000" />
-      <workItem from="1679554997029" duration="7653000" />
-      <workItem from="1679619922725" duration="879000" />
-      <workItem from="1679621065229" duration="8000" />
+      <updated>1679884721249</updated>
+      <workItem from="1679884722427" duration="866000" />
+      <workItem from="1679899047702" duration="4080000" />
     </task>
     <servers />
   </component>
