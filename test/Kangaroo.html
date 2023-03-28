@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Kangaroo</title>
+</head>
+<body>
+<script>
+    function kangaroo(x1, v1, x2, v2) {
+        // Write your code here
+        let flag = false
+        for (let i=0;i<=10000;i++){
+            if (x1+v1*i==x2+v2*i){
+                // console.log(i)
+                flag = true
+                break
+            }
+        }
+        return flag
+    }
+    let x1 = 0
+    let v1 = 3
+    let x2 = 4
+    let v2 = 2
+    console.log(kangaroo(x1,v1,x2,v2))
+</script>
+</body>
+</html>
