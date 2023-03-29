@@ -19,8 +19,6 @@
 
         body {
 
-            background: black;
-
             display: flex;
 
             align-items: center;
@@ -31,7 +29,7 @@
 
         canvas {
 
-            border: 1px solid white;
+            border: 1px solid black;
 
         }
 
@@ -60,8 +58,7 @@
 
         y: 160,
 
-        dx: grid, //hướng di chuyển theo phương x hoặc y,ở đây khi start game
-        //snake sẽ di chuyển theo x direction với value = 16
+        dx: grid, //hướng di chuyển theo phương x hoặc y,ở đây khi start game snake sẽ di chuyển theo x direction với value = 16
 
         dy: 0,
 
@@ -71,8 +68,6 @@
 
     };
 
-    var count = 0;
-
     var apple = {
 
         x: 320,
@@ -81,10 +76,11 @@
 
     };
 
+    var count = 0;
 
     function getRandomInt(min, max) {
 
-        return Math.floor(Math.random() * (max - min)) + min;
+        return Math.floor(Math.random() * (max - min));
 
     }
 
@@ -92,14 +88,14 @@
     // game loop
 
     function loop() {
-    //hàm này giống như setTimeout, sẽ gọi lại hàm loop khi loop thực thi xong
+        //hàm này giống như setTimeout, sẽ gọi lại hàm loop khi loop thực thi xong
 
         requestAnimationFrame(loop);
 
 
         // slow game loop to 15 fps instead of 60 - 60/15 = 4
 
-        if (++count < 4) {
+        if (++count < 5) {
 
             return;
 
@@ -108,12 +104,12 @@
 
         count = 0;
 
-        context.clearRect(0, 0, canvas.width, canvas.height);
+        context.clearRect(0, 0, canvas.width, canvas.height); //clear screen to redraw everything
 
 
         snake.x += snake.dx; // mỗi loop rắn sẽ di chuyển thêm 1dx đơn vị
 
-        snake.y += snake.dy;
+        snake.y += snake.dy; // mỗi loop rắn sẽ di chuyển thêm 1dy đơn vị
 
 
         // khi snake đụng tường sẽ chạy lại từ edge đối diện
@@ -156,23 +152,25 @@
 
         // draw apple
 
-        context.fillStyle = 'red';
-
-        context.fillRect(apple.x, apple.y, grid - 1, grid - 1);
+        context.fillStyle = "green"
+        context.beginPath()
+        context.arc(apple.x+(grid/2),apple.y+(grid/2),grid/2,0,2*Math.PI)
+        context.fill()
+        context.closePath()
 
 
         // draw snake
 
-        context.fillStyle = 'green';
+        context.fillStyle = 'blue';
 
-        snake.cells.forEach(function (cell, index) {
+        snake.cells.forEach(function (cell) {
 
             context.fillRect(cell.x, cell.y, grid - 1, grid - 1);
 
 
-            // snake ate apple
+            // snake ate apple => increase length
 
-            if (cell.x === apple.x && cell.y === apple.y) {
+            if (snake.x === apple.x && snake.y === apple.y) {
 
                 snake.maxCells++;
 
@@ -185,14 +183,8 @@
 
 
             // check va chạm khi rắn đụng đuôi
-
-            for (var i = index + 1; i < snake.cells.length; i++) {
-
-
-                // va chạm thì reset game
-
-                if (cell.x === snake.cells[i].x && cell.y === snake.cells[i].y) {
-
+            for (let i = 1; i <snake.cells.length; i++) {
+                if (snake.x === snake.cells[i].x && snake.y === snake.cells[i].y){
                     snake.x = 160;
 
                     snake.y = 160;
@@ -206,13 +198,41 @@
                     snake.dy = 0;
 
 
+                    // draw apple at a random position
                     apple.x = getRandomInt(0, 25) * grid;
 
                     apple.y = getRandomInt(0, 25) * grid;
-
                 }
-
             }
+            // for (let i = index + 1; i < snake.cells.length; i++) {
+            //
+            //
+            //     // va chạm thì reset game
+            //
+            //     if (cell.x === snake.cells[i].x && cell.y === snake.cells[i].y) {
+            //
+            //         //redraw snake at the starting position
+            //         snake.x = 160;
+            //
+            //         snake.y = 160;
+            //
+            //         snake.cells = [];
+            //
+            //         snake.maxCells = 4;
+            //
+            //         snake.dx = grid;
+            //
+            //         snake.dy = 0;
+            //
+            //
+            //         //draw apple at a random position
+            //         apple.x = getRandomInt(0, 25) * grid;
+            //
+            //         apple.y = getRandomInt(0, 25) * grid;
+            //
+            //     }
+            //
+            // }
 
         });
 
@@ -224,25 +244,25 @@
 
         // lọc sự kiện keydown để rắn không di ngược lại
 
-        if (e.which === 37 && snake.dx === 0) {
+        if (e.key === 'ArrowLeft' && snake.dx === 0) {
 
             snake.dx = -grid;
 
             snake.dy = 0;
 
-        } else if (e.which === 38 && snake.dy === 0) {
+        } else if (e.key === "ArrowUp" && snake.dy === 0) {
 
             snake.dy = -grid;
 
             snake.dx = 0;
 
-        } else if (e.which === 39 && snake.dx === 0) {
+        } else if (e.key === "ArrowRight" && snake.dx === 0) {
 
             snake.dx = grid;
 
             snake.dy = 0;
 
-        } else if (e.which === 40 && snake.dy === 0) {
+        } else if (e.key === "ArrowDown" && snake.dy === 0) {
 
             snake.dy = grid;
 

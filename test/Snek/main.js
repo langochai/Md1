@@ -7,6 +7,8 @@ function getRandomInt(min, max) {                      //canvas is 400px*400px, 
 
 let count = 1 // this variable is responsible for game's fps/speed
 
+
+
 function main(){
     requestAnimationFrame(main)
 
@@ -64,17 +66,19 @@ function main(){
         //when snake bites its own body
         for (let i = 1; i <snake.cells.length; i++) {
             if (snake.x === snake.cells[i].x && snake.y === snake.cells[i].y){
-                //reset snake position to default
-                snake.x = 160
-                snake.y = 160
-                snake.cells = []
-                snake.maxCells = 4
-                snake.dx = grid
-                snake.dy = 0
-
-                // draw apple at a random position
-                apple.x = getRandomInt(0, 25) * grid
-                apple.y = getRandomInt(0, 25) * grid
+                // //reset snake position to default
+                // snake.x = 160
+                // snake.y = 160
+                // snake.cells = []
+                // snake.maxCells = 4
+                // snake.dx = grid
+                // snake.dy = 0
+                //
+                // // draw apple at a random position
+                // apple.x = getRandomInt(0, 25) * grid
+                // apple.y = getRandomInt(0, 25) * grid
+                alert(`skill issue!`)
+                location.reload()
             }
         }
     })
