@@ -4,8 +4,14 @@
     <meta charset="UTF-8">
     <title>Snake Eaaaatttteeerrrr</title>
 </head>
-<body>
-<canvas id="game" width="400px" height="400px" style="border: solid black 1px"></canvas>
+<body style="align-items: center;display: flex;justify-content: center;background-image: url(image/snakebackground.jpg);
+background-repeat: no-repeat;background-size: 100% 100%;background-attachment: fixed">
+<audio id="nom">
+    <source src="sound/eat.mp3">
+</audio>
+<!--<audio src="sound/background%20music.m4a" autoplay loop="loop"></audio>-->
+<canvas id="game" width="400px" height="400px" style="border: solid black 1px;background-color: white"></canvas>
+<p id="score" style="color: white"></p>
 </body>
 <script src="Snake_and_apple.js"></script>
 <script src="main.js"></script>

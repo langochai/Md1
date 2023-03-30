@@ -1,12 +1,14 @@
 let canvas = document.getElementById('game')
 let ctx = canvas.getContext('2d')
+let scoreDisplay = document.getElementById('score')
+let nom = document.getElementById('nom')
 
 function getRandomInt(min, max) {                      //canvas is 400px*400px, 1 grid is 16px*16px => 25 grids
     return Math.floor(Math.random() * (max - min))  // this function is for apple's random position
 }
 
 let count = 1 // this variable is responsible for game's fps/speed
-
+let score = 0 // this variable is responsible for counting game's score
 
 
 function main(){
@@ -25,12 +27,12 @@ function main(){
     //when snake touches the edge => reappear out of the opposite edge
     if (snake.x < 0){
         snake.x = canvas.width - grid   //when touch left edge
-    } else if (snake.x > canvas.width){
+    } else if (snake.x >= canvas.width){
         snake.x = 0                     //when touch right edge
     }
     if (snake.y < 0){
         snake.y = canvas.height - grid  //when touch upper edge
-    } else if (snake.y > canvas.height){
+    } else if (snake.y >= canvas.height){
         snake.y = 0                     //when touch lower edge
     }
 
@@ -56,11 +58,13 @@ function main(){
     snake.cells.forEach(function (cell) { //for each element of array cells we draw a rectangle
         ctx.fillRect(cell.x, cell.y, grid - 1, grid - 1)
 
-        //if snake eats apple => increase snake's length and change position of apple
+        //if snake eats apple => increase snake's length, change position of apple, increase score and play sound
         if (snake.x === apple.x && snake.y === apple.y){
             snake.maxCells++
             apple.x = getRandomInt(0,25) * grid
             apple.y = getRandomInt(0,25) * grid
+            ++score
+            nom.play()
         }
 
         //when snake bites its own body
@@ -77,12 +81,15 @@ function main(){
                 // // draw apple at a random position
                 // apple.x = getRandomInt(0, 25) * grid
                 // apple.y = getRandomInt(0, 25) * grid
-                alert(`skill issue!`)
-                location.reload()
+                alert(`skill issue!!!`)
+                location.reload() // refresh the page
             }
         }
     })
 
+
+    //display score
+    scoreDisplay.innerHTML = "&nbsp&nbsp&nbsp&nbsp&nbsp SCORE : "+score
 }
 document.addEventListener('keydown', function (e) {
     if (e.key === 'ArrowLeft' && snake.dx === 0) {
