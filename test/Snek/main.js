@@ -17,7 +17,8 @@ function main(){
         requestAnimationFrame(main)
     } else {
         ctx.font = "30px Arial";
-        ctx.fillText("Game over",50,50);
+        ctx.fillStyle="black"
+        ctx.fillText("Game over",128,205);
     }
     if (count++<loopcondition){    // 5 frames = 1 loop
         return
@@ -125,8 +126,5 @@ document.addEventListener('keydown', function (e) {
     }
 })
 
-function replay(){
-    location.reload()
-}
 requestAnimationFrame(main)
 console.log(loopcondition)
