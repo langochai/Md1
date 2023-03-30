@@ -7,18 +7,19 @@ function getRandomInt(min, max) {                      //canvas is 400px*400px, 
     return Math.floor(Math.random() * (max - min))  // this function is for apple's random position
 }
 
-let count = 1 // this variable is responsible for game's fps/speed
-let score = 0 // this variable is responsible for counting game's score
-let lp = 3    // this variable is responsible for life point
-
+let count = 1           // this variable is responsible for game's fps/speed
+let loopcondition = 10  // this variable is responsible for game's fps/speed
+let score = 0           // this variable is responsible for counting game's score
+let lp = 3              // this variable is responsible for life point
 
 function main(){
     if(lp>0) {          //game only runs when life point is not zero
         requestAnimationFrame(main)
     } else {
-        alert(`skill issue!!!`)
+        ctx.font = "30px Arial";
+        ctx.fillText("Game over",50,50);
     }
-    if (count++<6){    // 5 frames = 1 loop
+    if (count++<loopcondition){    // 5 frames = 1 loop
         return
     }
 
@@ -97,8 +98,8 @@ function main(){
     })
 
 
-    //display score
-    scoreLpDisplay.innerHTML = "&nbsp&nbsp&nbsp&nbsp&nbsp SCORE : "+score+"&nbsp LIFE : "+lp
+    //display score and life point
+    scoreLpDisplay.innerHTML = "&nbsp&nbsp&nbsp&nbsp&nbsp SCORE : "+score+"&nbsp LIFE : "+lp + "&nbsp&nbsp&nbsp"
 }
 document.addEventListener('keydown', function (e) {
     if (e.key === 'ArrowLeft' && snake.dx === 0) {
@@ -113,8 +114,19 @@ document.addEventListener('keydown', function (e) {
     } else if (e.key === "ArrowDown" && snake.dy === 0) {
         snake.dy = grid
         snake.dx = 0
+    } else if (e.key === "i" && snake.dy === 0){  //pressing "i" will increase speed of the game
+        if(loopcondition>1) {                     // making loopcondition cannot go under too far
+            loopcondition--
+        }
+    } else if (e.key === "o" && snake.dy === 0){  //pressing "o" will decrease speed of the game
+        if(loopcondition<20) {                    //making loopcondition cannot go up too far
+            loopcondition++
+        }
     }
 })
 
-
+function replay(){
+    location.reload()
+}
 requestAnimationFrame(main)
+console.log(loopcondition)
