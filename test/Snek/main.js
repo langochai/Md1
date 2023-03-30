@@ -1,6 +1,6 @@
 let canvas = document.getElementById('game')
 let ctx = canvas.getContext('2d')
-let scoreDisplay = document.getElementById('score')
+let scoreLpDisplay = document.getElementById('score')
 let nom = document.getElementById('nom')
 
 function getRandomInt(min, max) {                      //canvas is 400px*400px, 1 grid is 16px*16px => 25 grids
@@ -9,11 +9,15 @@ function getRandomInt(min, max) {                      //canvas is 400px*400px, 
 
 let count = 1 // this variable is responsible for game's fps/speed
 let score = 0 // this variable is responsible for counting game's score
+let lp = 3    // this variable is responsible for life point
 
 
 function main(){
-    requestAnimationFrame(main)
-
+    if(lp>0) {          //game only runs when life point is not zero
+        requestAnimationFrame(main)
+    } else {
+        alert(`skill issue!!!`)
+    }
     if (count++<6){    // 5 frames = 1 loop
         return
     }
@@ -70,26 +74,31 @@ function main(){
         //when snake bites its own body
         for (let i = 1; i <snake.cells.length; i++) {
             if (snake.x === snake.cells[i].x && snake.y === snake.cells[i].y){
-                // //reset snake position to default
-                // snake.x = 160
-                // snake.y = 160
-                // snake.cells = []
-                // snake.maxCells = 4
-                // snake.dx = grid
-                // snake.dy = 0
-                //
-                // // draw apple at a random position
-                // apple.x = getRandomInt(0, 25) * grid
-                // apple.y = getRandomInt(0, 25) * grid
-                alert(`skill issue!!!`)
-                location.reload() // refresh the page
+                //reset snake position to default
+                snake.x = 160
+                snake.y = 160
+                snake.cells = []
+                snake.maxCells = 4
+                snake.dx = grid
+                snake.dy = 0
+
+                // draw apple at a random position
+                apple.x = getRandomInt(0, 25) * grid
+                apple.y = getRandomInt(0, 25) * grid
+
+                //life point decreases
+                lp--
+
+                //these codes are just for testing
+                // alert(`skill issue!!!`)
+                // location.reload() // refresh the page
             }
         }
     })
 
 
     //display score
-    scoreDisplay.innerHTML = "&nbsp&nbsp&nbsp&nbsp&nbsp SCORE : "+score
+    scoreLpDisplay.innerHTML = "&nbsp&nbsp&nbsp&nbsp&nbsp SCORE : "+score+"&nbsp LIFE : "+lp
 }
 document.addEventListener('keydown', function (e) {
     if (e.key === 'ArrowLeft' && snake.dx === 0) {
@@ -106,4 +115,6 @@ document.addEventListener('keydown', function (e) {
         snake.dx = 0
     }
 })
+
+
 requestAnimationFrame(main)
