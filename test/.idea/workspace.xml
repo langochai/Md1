@@ -6,6 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="e0a71804-1093-4f69-9082-876368f2c977" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Snek/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/Snek/main.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test hackerank.html" beforeDir="false" afterPath="$PROJECT_DIR$/test hackerank.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -47,7 +49,9 @@
       <updated>1680071629162</updated>
       <workItem from="1680071630359" duration="5870000" />
       <workItem from="1680138618186" duration="706000" />
-      <workItem from="1680147578779" duration="2968000" />
+      <workItem from="1680147578779" duration="2996000" />
+      <workItem from="1680157729851" duration="9097000" />
+      <workItem from="1680225281647" duration="2094000" />
     </task>
     <servers />
   </component>

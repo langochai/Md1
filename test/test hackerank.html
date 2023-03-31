@@ -6,34 +6,14 @@
 </head>
 <body>
 <script>
-    function pickingNumbers(a) {
-        let totalValue = []
-        let dodai = []
-        for (let i=0;i<a.length;i++){
-            let value = [a[i]]
-            // console.log(value)
-            let newA = a
-            newA.splice(i,1)
-            // console.log(newA)
-            let upperValue = []
-            let lowerValue = []
-            for (let j = 0; j < newA.length; j++) {
-                if(newA[j]===a[i]){
-                    value.push(newA[j])
-                }
-
+    for (let i = 0; i < 2; i++) {
+        for (let j = 0; j < 3; j++) {
+            if (i == j) {
+                continue;
             }
-            totalValue.push(value)
+            console.log("i = " + i + " j = " + j);
         }
-        // console.log(totalValue)
-        for (let i=0;i<totalValue.length;i++){
-            dodai.push(totalValue[i].length)
-        }
-        dodai.sort(function(a, b){return b-a})
-        return dodai[0]
     }
-    let a = [4, 6, 5, 3, 3, 1]
-    console.log(pickingNumbers(a))
 </script>
 </body>
 </html>

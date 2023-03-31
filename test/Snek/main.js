@@ -127,4 +127,3 @@ document.addEventListener('keydown', function (e) {
 })
 
 requestAnimationFrame(main)
-console.log(loopcondition)
