@@ -6,7 +6,7 @@ let snake = {
     dx:grid,
     dy:0,
     cells:[], //snake's body is determined by an array of cells
-    maxCells:4 //snake's default length is 4
+    maxCells:5 //snake's default length is 5
 }
 
 let apple = {
