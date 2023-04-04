@@ -20,7 +20,7 @@ function main(){
         ctx.fillStyle="black"
         ctx.fillText("Game over",128,205);
     }
-    if (count++<loopcondition){    // 5 frames = 1 loop
+    if (count++<loopcondition){    // 10 frames = 1 loop
         return
     }
 
